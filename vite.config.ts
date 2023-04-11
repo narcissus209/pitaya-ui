@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import dts from 'vite-plugin-dts'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 const resolvePath = (path: string) => {
   return fileURLToPath(new URL(path, import.meta.url))
@@ -14,6 +15,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    vueSetupExtend(),
     dts({
       tsConfigFilePath: resolvePath('./tsconfig.json'),
       outputDir: './dist/lib',
@@ -44,7 +46,7 @@ export default defineConfig({
     minify: false,
     lib: {
       entry: resolvePath('./src/packages/index.ts'),
-      name: 'pitaya-ui',
+      name: 'pet-ui',
     },
     rollupOptions: {
       //忽略打包vue文件

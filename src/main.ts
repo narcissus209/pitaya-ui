@@ -1,13 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import Pitaya from './packages'
-// import Pitaya from '../dist/es'
-// import '../dist/es/style.css'
+import Pet from './packages'
 
 const app = createApp(App)
 
 app.use(router)
-app.use(Pitaya)
+app.use(Pet)
 
 app.mount('#app')

@@ -6,9 +6,9 @@ interface Module {
   default: Plugin | PluginsObj
 }
 
-const PitayaComponent: Plugin = {
+const Component: Plugin = {
   install: (app: App) => {
-    const modules = import.meta.glob('./**/**.ts', { eager: true })
+    const modules = import.meta.glob('./**/index.ts', { eager: true })
     Object.keys(modules).forEach(k => {
       const { default: com } = modules[k] as Module
       if (com.install) {
@@ -26,5 +26,5 @@ const PitayaComponent: Plugin = {
   },
 }
 
-export * from './PitayaButton'
-export default PitayaComponent
+export default Component
+export * from './PetForm'

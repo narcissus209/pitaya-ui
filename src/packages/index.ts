@@ -1,11 +1,11 @@
 import type { App, Plugin } from 'vue'
-import PitayaComponent from './components'
+import Components from './components'
 
-const Pitaya: Plugin = {
+export const Pet: Plugin = {
   install: (app: App) => {
-    app.use(PitayaComponent)
+    app.use(Components)
   },
 }
 
 export * from './components'
-export default Pitaya
+export default Pet

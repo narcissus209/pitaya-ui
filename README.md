@@ -1,1 +1,1 @@
-# pitaya-ui
+# pit-ui
